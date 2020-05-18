@@ -1,22 +1,22 @@
 # chat-space DB設計
 ## usersテーブル
 
-｜Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :messages
+- has_many :comments
 
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -25,31 +25,19 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
 
 
+ ## groupsテーブル
 
-## users_editテーブル
-
-|Column|Type|Options|
+ Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|username|string|null: false|
-|email|string|null: false|
+|user|references|null: false, foreign_key: true|
+|name|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-
-
-## groups_editテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :coments
