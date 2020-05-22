@@ -1,0 +1,46 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__left-box
+      .chat-main__group-info__left-box__group-name
+        aチーム
+      .chat-main__group-info__left-box__name
+        Member : mayu
+    .chat-main__group-info__edit-btn
+      =link_to "#" do
+        Edit
+        
+  .chat-main__message-list
+    .chat-main__message-list__message-info
+      .chat-main__message-list__message-info__talker
+        mayu
+      .chat-main__message-list__message-info__date
+        2020/05/21(Thu) 22:23:43
+    .chat-main__message-list__message-text
+      こんにちは
+
+    .chat-main__message-list__message-info
+      .chat-main__message-list__message-info__talker
+        mayu
+      .chat-main__message-list__message-info__date
+        2020/05/21(Thu) 22:23:43
+    .chat-main__message-list__message-text
+      こんにちは
+
+    .chat-main__message-list__message-info
+      .chat-main__message-list__message-info__talker
+        mayu
+      .chat-main__message-list__message-info__date
+        2020/05/21(Thu) 22:23:43
+    .chat-main__message-list__message-text
+      こんにちは
+  
+
+  .chat-main__type-message
+    .chat-main__type-message__input-box
+      %input.chat-main__type-message__input-box__message{placeholder: "type a message"}
+        
+      %label.chat-main__type-message__input-box__image
+        =icon('fas', 'image')
+        %input.chat-main__type-message__input-box__image__file{type: "file"}
+    .chat-main__type-message__submit-btn
+      Send
