@@ -2,13 +2,13 @@
   .side-bar__user-name
     .side-bar__user-name__top-items
       .side-bar__user-name__top-items__name
-        mayu
+        =current_user.name
       .side-bar__user-name__top-items__menu
         .side-bar__user-name__top-items__menu__edit
           = link_to "#" do
             =icon('far', 'edit')
         .side-bar__user-name__top-items__menu__new   
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             =icon('fas', 'cog')
 
   .side-bar__group-list
