@@ -20,40 +20,43 @@
         color: #ffffff;
       }
       &__menu{
-        display: flex;
+        width: 60px;
         list-style: none;
-        &__edit{
-          a{
-          color: #ffffff;
-          }
-          margin-right: 5px;
-        } 
-        &__new{
-          a{
-          color: #ffffff;
-          }
-          margin-right: 0px;
+        text-align: right;
+        height: 20px;
+        margin-left: 5px;
+
+        a{
+          text-decoration: none;
         }
+
+        .icon{
+        color: #ffffff;
+        } 
       }
     }
   }
 
   .side-bar__group-list{
     background-color: #2f3e51;
-    height: calc(100% - 100px);
+    height: calc(100vh - 100px);
     padding: 20px;
     &__group{
-      background-color: #2f3e51;
+      // background-color: #2f3e51;
       margin-bottom: 40px;
-      color: #ffffff;
       font-weight: bold;
-      &__group-name{
-        font-size: 15px;
-        margin-bottom: 5px;
+      a{
+        text-decoration: none;
+        color: #ffffff;
       }
-      &__group-comment{
-        font-size: 11px;
-      }
+        &__group-name{
+          
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__group-comment{
+          font-size: 11px;
+        }
     
     }
   }

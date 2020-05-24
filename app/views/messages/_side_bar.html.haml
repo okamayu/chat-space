@@ -4,28 +4,18 @@
       .side-bar__user-name__top-items__name
         =current_user.name
       .side-bar__user-name__top-items__menu
-        .side-bar__user-name__top-items__menu__edit
-          = link_to "#" do
-            =icon('far', 'edit')
-        .side-bar__user-name__top-items__menu__new   
-          = link_to edit_user_path(current_user) do
-            =icon('fas', 'cog')
+        = link_to new_group_path do
+          =icon('far', 'edit', class: 'icon')
+        = link_to edit_user_path(current_user) do
+          =icon('fas', 'cog', class: 'icon')
 
   .side-bar__group-list
-    .side-bar__group-list__group
-      .side-bar__group-list__group__group-name
-        aチーム
-      .side-bar__group-list__group__group-comment
-        こんにちは
+    - current_user.groups.each do |group|
+      .side-bar__group-list__group
+        = link_to '#' do
+          .side-bar__group-list__group__group-name
+            = group.name
+          .side-bar__group-list__group__group-comment
+            メッセージはまだありません。
 
-    .side-bar__group-list__group
-      .side-bar__group-list__group__group-name
-        aチーム
-      .side-bar__group-list__group__group-comment
-        こんにちは
-
-    .side-bar__group-list__group
-      .side-bar__group-list__group__group-name
-        aチーム
-      .side-bar__group-list__group__group-comment
-        こんにちは   
+    
