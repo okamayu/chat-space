@@ -36,11 +36,12 @@
   
 
   .chat-main__type-message
-    .chat-main__type-message__input-box
-      %input.chat-main__type-message__input-box__message{placeholder: "type a message"}
+    = form_for [@group, @message] ,html:{class:"chat-main__type-message__input-box"} do |f|
+      = f.text_field :content, class: 'chat-main__type-message__input-box__message', placeholder: 'type a message'
+      -# %input.chat-main__type-message__input-box__message{placeholder: "type a message"}
         
-      %label.chat-main__type-message__input-box__image
+      = f.label :image, class: 'chat-main__type-message__input-box__image' do
         =icon('fas', 'image')
-        %input.chat-main__type-message__input-box__image__file{type: "file"}
-    .chat-main__type-message__submit-btn
-      Send
+        =f.file_field :image, class: 'chat-main__type-message__input-box__image__file'
+      = f.submit 'Send', class: 'chat-main__type-message__submit-btn'
+    
