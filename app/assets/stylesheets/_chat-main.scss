@@ -64,12 +64,17 @@
       }
   }
 
+  .new_message{
+    width:100%;
+    display:flex;
+  }
+
   .chat-main__type-message{
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
-    display: flex;
-    position: relative;
+    // display: flex;
+    // position: relative;
     &__input-box{
       height: 50px;
       line-height: 50px;
@@ -87,6 +92,7 @@
           position: absolute;
           right: 10px;
           font-size: 1.3rem;
+          top: 5px;
           &__file{
           display: none;
           position: absolute;
