@@ -43,6 +43,7 @@
     background-color: #fafafa;
     height: calc(100% - 190px);
     padding: 46px 40px;
+    overflow: scroll;
       &__message-info{
         display: flex;
         &__talker{
